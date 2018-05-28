@@ -1,0 +1,51 @@
+{
+  "name": "jquery.scrollto.js",
+  "description": "A cross-browser scroll to anchor jQuery plugin with animation support",
+  "license": "MIT",
+  "author": "Leif DeJong <me@leifdejong.com>",
+  "repository": "https://github.com/leifdejong/jquery-scrollto.js",
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "webpack -p --progress --mode production --config webpack.config.js",
+    "precommit": "lint-staged",
+    "predeploy": "npm run build",
+    "dev": "cross-env NODE_ENV=dev webpack-dev-server --progress --open --mode development --config webpack.config.js",
+    "lint": "eslint src",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jquery": "^1.3.1",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.7.0",
+    "husky": "^0.14.3",
+    "install": "^0.10.4",
+    "lint-staged": "^7.0.5",
+    "prettier": "^1.12.1",
+    "prettier-package-json": "^1.5.1",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.1.4",
+    "webpack-dev-server": "^3.1.1"
+  },
+  "lint-staged": {
+    "package.json": [
+      "prettier-package-json --write",
+      "git add"
+    ],
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}
